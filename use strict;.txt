@@ -1,0 +1,19 @@
+use strict;
+use warnings;
+
+my $start = 1_000_000_001;
+my $end = 1_000_200_000;
+my $sum=0;
+for($start .. $end){
+    my $flag = 0;
+    for( my $k=2; $k <= int(sqrt($_)); $k++){
+        if(($_ % $k) == 0){
+            $flag = 1;
+        }
+    }
+    if($flag == 0){
+        $sum += $_;
+    }
+}
+
+print "$sum\n";
